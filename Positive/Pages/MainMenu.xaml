@@ -1,0 +1,236 @@
+﻿<Page x:Class="Positive.Pages.MainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Positive.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="768" d:DesignWidth="1366"
+      Title="MainMenu">
+    <Border BorderThickness="0" Grid.Column="1" Background="#FFFFFFFF">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Border>
+                <Grid Background="#FF607D8B">
+                    <Grid.Effect>
+                        <DropShadowEffect Direction="270" RenderingBias="Quality" 
+                                          Opacity="0.3" BlurRadius="4" 
+                                          ShadowDepth="2"/>
+                    </Grid.Effect>
+                    <TextBlock x:Name="HeaderTextBlock" 
+                               TextWrapping="Wrap" 
+                               RenderTransformOrigin="0.087,0.391" Foreground="White" 
+                               FontFamily="Roboto Medium" FontSize="24" 
+                               HorizontalAlignment="Center" VerticalAlignment="Center" 
+                               TextAlignment="Center">
+                        Positive
+                    </TextBlock>
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="480"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="240*"/>
+                        <ColumnDefinition Width="241*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock x:Name="GreetingsTextBox" TextWrapping="Wrap" 
+                               FontFamily="Roboto Thin" FontSize="18" 
+                               Foreground="#DD000000" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="2" Margin="112,55,112,0">
+                        <TextBlock FontFamily="{StaticResource MaterialIcon}" Foreground="#FF607D8B" 
+                                   FontSize="72">
+                            &#xe854;
+                        </TextBlock>
+                        <LineBreak></LineBreak>
+                        <LineBreak></LineBreak>
+                        <TextBlock FontSize="24" FontFamily="Roboto">
+                            Welcome to Positive!
+                        </TextBlock>
+                        <LineBreak>
+                        </LineBreak>
+                        Choose an action below to begin.
+                    </TextBlock>
+
+                    <Button x:Name="BeginSellingButton" TabIndex="0"
+                            Style="{StaticResource CustomButton}" Margin="10,0,0,0" 
+                            BorderBrush="{x:Null}" FontSize="16" 
+                            HorizontalContentAlignment="Left" Height="40" 
+                            VerticalAlignment="Top" Grid.Row="1" HorizontalAlignment="Left" Width="460" Grid.ColumnSpan="2">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" BeginTime="00:00:00">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.00" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.20" Value="1.0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.00" Value="0,0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.20" Value="10,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+
+                        <Grid Width="457" Height="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock FontFamily="{StaticResource MaterialIcon}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                       FontSize="24">
+                                &#xe227;
+                            </TextBlock>
+                            <TextBlock Grid.Column="1" FontFamily="Roboto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Center">
+                                Begin Selling
+                            </TextBlock>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="SalesReportButton" TabIndex="1"
+                            Style="{StaticResource CustomButton}"  Margin="10,0,0,0" 
+                            BorderBrush="{x:Null}" FontSize="16" 
+                            HorizontalContentAlignment="Left" Height="40" 
+                            VerticalAlignment="Top" Grid.Row="2" HorizontalAlignment="Left" Width="460" Grid.ColumnSpan="2">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" BeginTime="00:00:00">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.00" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.10" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.30" Value="1.0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.10" Value="0,0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.30" Value="10,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+
+                        <Grid Width="457" Height="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock FontFamily="{StaticResource MaterialIcon}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                       FontSize="24">
+                                &#xe24b;
+                            </TextBlock>
+                            <TextBlock Grid.Column="1" FontFamily="Roboto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Center">
+                                Sales Report
+                            </TextBlock>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="InventoryButton" TabIndex="2"
+                            Style="{StaticResource CustomButton}" Margin="10,0,0,0" 
+                            BorderBrush="{x:Null}" FontSize="16" 
+                            HorizontalContentAlignment="Left" Height="40" 
+                            VerticalAlignment="Top" Grid.Row="3" HorizontalAlignment="Left" Width="460" Grid.ColumnSpan="2">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" BeginTime="00:00:00">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.00" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.20" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.40" Value="1.0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.20" Value="0,0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.40" Value="10,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                        <Grid Width="457" Height="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="5*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock FontFamily="{StaticResource MaterialIcon}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24">
+                                &#xe8f0;
+                            </TextBlock>
+                            <TextBlock Grid.Column="1" FontFamily="Roboto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Center">
+                                Inventory
+                            </TextBlock>
+                        </Grid>
+                    </Button>
+
+                    <Button x:Name="LogoutButton" TabIndex="3"
+                            Style="{StaticResource CustomButton}" Margin="10,0,0,0" 
+                            BorderBrush="{x:Null}" FontSize="16" 
+                            HorizontalContentAlignment="Left" Grid.Row="4" 
+                            Click="LogoutButton_Click" HorizontalAlignment="Left" Width="460" Height="40" VerticalAlignment="Top" Grid.ColumnSpan="2">
+                        <Button.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" BeginTime="00:00:00">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.00" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.30" Value="0.0" />
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.50" Value="1.0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.30" Value="0,0,0,0" />
+                                            <SplineThicknessKeyFrame KeyTime="00:00:00.50" Value="10,0,0,0" />
+                                        </ThicknessAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Button.Triggers>
+                        <Grid Width="457" Height="40">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"></ColumnDefinition>
+                                <ColumnDefinition Width="5*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock FontFamily="{StaticResource MaterialIcon}" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                       FontSize="24">
+                                &#xe5c4;
+                            </TextBlock>
+                            <TextBlock Grid.Column="1" FontFamily="Roboto" 
+                                       HorizontalAlignment="Left" VerticalAlignment="Center">
+                                Logout
+                            </TextBlock>
+                        </Grid>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Page>
